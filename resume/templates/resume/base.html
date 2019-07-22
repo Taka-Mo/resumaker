@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no'>
+        <title>ResuMake</title>
+        <link
+            rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+            crossorigin="anonymous">
+        {% load static %}
+        <link rel="stylesheet" href="{% static "/resume/style.css" %}" type="text/css">
+        <style>body {padding-top: 80px}</style>
+    </head>
+
+    <body>
+        <nav class='navbar navbar-expand-md bg-info fixed-top'>
+            <div class="container-fluid">
+                <ul class="nav navbar-nav">
+                    <li><a class='navbar-brand text-light' href="http://localhost:8000/resume">Resumaker</a></li>
+                </ul>
+
+                {% if user.is_authenticated %}
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a class='navbar-brand' >ログインユーザ：{{ user.username }}</a></li>
+                    <li><a class='navbar-brand text-light' href="http://localhost:8000/resume/logout">ログアウト</a></li>
+                </ul>
+                {% else %}
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a class='navbar-brand text-light' href="http://localhost:8000/resume/login">ログイン</a></li>
+                    <li><a class='navbar-brand text-light' href="http://localhost:8000/resume/register">登録</a></li>
+                </ul>
+                {% endif %}
+
+            </div>
+        </nav>
+
+        <div class = 'container'>
+            {% block content %}
+            {% endblock %}
+        </div>
+    </body>
+
+</html>

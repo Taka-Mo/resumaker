@@ -1,0 +1,26 @@
+{% extends './base.html' %}
+{% block content %}
+
+    <h1>{{  message  }}</h1>
+    <form method='post'>
+        {% csrf_token %}
+        <table>
+            {{ inputForm.as_table }}
+        </table>
+        <input type="submit" class="btn btn-outline-primary" value="文中に反映" />
+    </form>
+
+    <p>I came to Melbourne seeking new challenges and to test my limits.<br>
+    （私は新しいことに挑戦して、自分を成長させるためにメルボルンに来ました。）</p>
+    <p>I would like to work as a {{ aboutme1 }} in the hospitality industry where<br>
+    （ホスピタリティの分野で {{ aboutme1 }} として活躍することで）<p>
+    <p>I can utilise my customer interaction skills and be an asset to the business.<br>
+    （私の接客スキルを生かし、御社にとって有益な人材になりたいと考えています。）</p>
+    <p>I would like to provide exceptional service to the customer while<br>
+    （また、接客業を通してお客様に特別なサービスを提供しながら）</p>
+    <p>continuously improving my {{ aboutme2 }} skills.<br>
+    （私自身の {{ aboutme2 }} もより向上させたいとも思っています。）</p>
+
+    <a class="btn btn-outline-primary" href="http://localhost:8000/resume/step4" role="button">次へ</a>
+
+{% endblock %}

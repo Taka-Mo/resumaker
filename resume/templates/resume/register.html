@@ -1,0 +1,22 @@
+{% extends './base.html' %}
+{% block content %}
+
+    <div class = "w-100 p-3 container-fluid text-left" style="background-color: #D9F9F3; color: #515A5A;">
+        <h2>{{  message  }}</h2>
+         <form method='post'>
+            {% csrf_token %}
+            {% for field in Form %}
+              <p>
+                {{ field.label_tag }}
+                {{ field }}
+                {% for error in field.errors %}
+                  <p style="color: red">{{ error }}</p>
+                {% endfor %}
+              </p>
+            {% endfor %}
+             <input type="submit" class="btn btn-outline-primary" value="{{ button }}" />
+        </form>
+    </div>
+
+
+{% endblock %}

@@ -1,0 +1,44 @@
+{% extends './base.html' %}
+{% block content %}
+
+    <div class = "w-100 p-3 container-fluid text-center" style="background-color: #D1F2EB; color: #515A5A;">
+        <h1>Resumeをつくって見よう！</h1>
+        <p>英語環境で仕事を見つけられるか不安…。印象に残るResumeを作って自信を持って自分を売り込もう！<br>
+            本サイトではあなたのアピールポイントを英語にして、魅力的なResumeの作成をサポートします。</p>
+    </div>
+
+    <a type="submit" class="btn btn-outline-primary" href="step1">作ってみる</a>
+
+
+    <div class = "w-100 p-3 container-fluid text-left" style="background-color: #85C1E9; color: #515A5A;">
+        <h3>Step 1. 氏名・連絡先を入力してください</h3>
+        <p>お店の人が連絡するときに使うため間違えの内容に入力しましょう。<br>
+            TwitterやInstagramのアカウントも載せて積極的にアピールしましょう。</p>
+    </div>
+
+    <div class = "w-100 p-3 container-fluid text-left" style="background-color: #D1F2EB; color: #515A5A;">
+        <h3>Step 2. 学校について教えてください</h3>
+        <p>現在勉強していることや、過去に勉強した事を記載して自分のことをよりよく分かってもらおう。<br>
+            ここは簡潔・シンプルに記載しましょう！</p>
+    </div>
+
+    <div class = "w-100 p-3 container-fluid text-left" style="background-color: #85C1E9; color: #515A5A;">
+        <h3>Step ３. アピールポイントを作成しよう</h3>
+        <p>志望理由やモチベーションをアピールしましょう。<br>
+            職種やアピールしたい内容を元にアピール文を作成するのをアシストします。</p>
+    </div>
+
+    <div class = "w-100 p-3 container-fluid text-left" style="background-color: #D1F2EB; color: #515A5A;">
+        <h3>Step ４. 経験・スキル</h3>
+        <p>職歴とスキルを簡潔にまとめよう<br>
+            選択肢から簡単・簡潔に経験や強みを載せましょう。</p>
+
+    <div class = "w-100 p-3 container-fluid text-left" style="background-color: #85C1E900; color: #515A5A;">
+        <h3>完成イメージ</h3>
+        {% load static %}
+        <img src="{% static "resume/example.jpg" %}">
+    </div>
+
+        <a type="submit" class="btn btn-outline-primary" href="step1">作ってみる</a>
+
+{% endblock %}
